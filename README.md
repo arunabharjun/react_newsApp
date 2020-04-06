@@ -28,7 +28,16 @@ class Counter_Class extends Component {
 		this.setState({
 			count: 0
 		});
-	};
+    };
+    
+    componentDidMount(){
+		document.title = `Class Clicled ${this.state.count} times`
+	}
+
+	componentDidUpdate(){
+		document.title = `Class Clicled ${this.state.count} times`
+    }
+    
 	render() {
 		return ( < div > < button type = 'button'
 			class = 'btn btn-raised btn-outline-success btn-lg btn-block'
@@ -62,7 +71,12 @@ const Counter_fn = () => {
 	};
 	const reset = () => {
 		setCount(0);
-	};
+    };
+    
+    useEffect(() => {
+		document.title = `Fn Clicled ${count} times`
+    })
+    
 	return ( < div > < button type = 'button'
 		class = 'btn btn-raised btn-outline-info btn-lg btn-block'
 		onClick = {
