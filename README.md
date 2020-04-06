@@ -9,7 +9,7 @@ In the project directory, you can run:
 #
 ## Comparison
 
-#### Class Component
+## Class Component
 
 ```js
 class Counter_Class extends Component {
