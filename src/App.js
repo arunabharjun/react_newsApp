@@ -1,146 +1,50 @@
 import React, { Component, useState, useEffect } from 'react';
+import News_app from './News';
 
-class Counter_Class extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			count: 0
-		};
-	}
-
-	increment = () => {
-		this.setState({
-			count: this.state.count + 1
-		});
-	};
-
-	reset = () => {
-		this.setState({
-			count: 0
-		});
-	};
-
-	componentDidMount(){
-		document.title = `Class Clicled ${this.state.count} times`
-	}
-
-	componentDidUpdate(){
-		document.title = `Class Clicled ${this.state.count} times`
-	}
-
-	render() {
-		return (
-			<div>
-				<button
-					type='button'
-					class='btn btn-raised btn-outline-success btn-lg btn-block'
-					onClick={this.increment}
-				>
-					Clicked {this.state.count} times
-				</button>
-				<br />
-				<center>
-					<button onClick={this.reset} type='button' class='btn btn-success bmd-btn-fab'>
-						<i class='material-icons'>refresh</i>
-					</button>
-				</center>
-			</div>
-		);
-	}
-}
-
-const Counter_fn = () => {
-	const [
-		count,
-		setCount
-	] = useState(0);
-
-	const increment = () => {
-		setCount(count + 1);
-	};
-
-	const reset = () => {
-		setCount(0);
-	};
-
-	useEffect(() => {
-		document.title = `Fn Clicled ${count} times`
-	})
-
+const The_app = () => {
 	return (
-		<div>
-			<button type='button' class='btn btn-raised btn-outline-info btn-lg btn-block' onClick={increment}>
-				Clicked {count} times
-			</button>
-			<br />
-			<center>
-				<button onClick={reset} type='button' class='btn btn-info bmd-btn-fab'>
-					<i class='material-icons'>refresh</i>
+		<div style={{ maxHeight: '100vh', overflow: 'hidden' }}>
+			<nav class='navbar sticky-top navbar-dark bg-dark' style={{ zIndex: '1' }}>
+				<a class='navbar-brand' href='#'>
+					News App
+				</a>
+				<button
+					class='navbar-toggler'
+					type='button'
+					data-toggle='drawer'
+					data-target='#dw-s2'
+					style={{ border: 'none' }}
+				>
+					<span class='navbar-toggler-icon' />
 				</button>
-			</center>
+			</nav>
+			<div class='bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay bg-dark' style={{ overflow: 'hidden' }}>
+				<div
+					id='dw-s2'
+					class='bmd-layout-drawer bg-faded bg-light'
+					style={{ zIndex: '9999999', marginTop: '-30px', color: '#000', minHeight: '105vh' }}
+				>
+					<ul class='list-group' style={{ color: '#000' }}>
+						<a class='list-group-item'>- Arunabh Arjun</a>
+					</ul>
+				</div>
+				<main class='bmd-layout-content' style={{ maxHeight: '95vh', overflowY: 'scroll' }}>
+					<div class='container center_itm'>
+						<br />
+						<h4>Today's News</h4>
+						<br />
+						<News_app />
+						<br />
+						{/* Main content Here */}
+					</div>
+				</main>
+			</div>
 		</div>
 	);
 };
 
-class Nav extends Component {
-	render() {
-		return (
-			<div>
-				<div
-					class='bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay bg-dark'
-					style={{ minHeight: '100vh' }}
-				>
-					<header class='bmd-layout-header'>
-						<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-							<a class='navbar-brand' href='#'>
-								React Counter
-							</a>
-							<button
-								class='navbar-toggler'
-								type='button'
-								data-toggle='drawer'
-								data-target='#dw-s2'
-								style={{ border: 'none' }}
-							>
-								<span class='navbar-toggler-icon' />
-							</button>
-						</nav>
-					</header>
-					<div id='dw-s2' class='bmd-layout-drawer bg-faded bg-dark'>
-						<header style={{ color: 'white' }}>
-							<a class='navbar-brand justify-content-center'>React Counter</a>
-						</header>
-						<ul class='list-group' style={{ color: 'white' }}>
-							<a class='list-group-item'>- Arunabh Arjun</a>
-						</ul>
-					</div>
-					<main class='bmd-layout-content'>
-						<div class='container center_itm'>
-							<h3>Class Component</h3>
-							<br />
-							<Counter_Class />
-							<br />
-							<hr />
-							<br />
-							<h3>Functional Component</h3>
-							<br />
-							<Counter_fn />
-						</div>
-					</main>
-				</div>
-			</div>
-		);
-	}
-}
-
-class App extends Component {
-	render() {
-		return (
-			<div>
-				<Nav />
-			</div>
-		);
-	}
-}
+const App = () => {
+	return <The_app />;
+};
 
 export default App;
