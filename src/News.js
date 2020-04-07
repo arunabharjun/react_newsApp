@@ -58,6 +58,7 @@ const News_app = () => {
 							onChange={searchForm}
 							class='form-control'
 							placeholder='Search Query Here'
+							style={{ color: '#aaa' }}
 						/>
 					</div>
 					<div class='col'>
