@@ -21,11 +21,14 @@ const The_app = () => {
 			<div class='bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay bg-dark' style={{ overflow: 'hidden' }}>
 				<div
 					id='dw-s2'
-					class='bmd-layout-drawer bg-faded bg-light'
-					style={{ zIndex: '9999999', marginTop: '-30px', color: '#000', minHeight: '105vh' }}
+					class='bmd-layout-drawer bg-faded bg-dark'
+					style={{ zIndex: '9999999', marginTop: '-30px', minHeight: '105vh' }}
 				>
-					<ul class='list-group' style={{ color: '#000' }}>
-						<a class='list-group-item'>- Arunabh Arjun</a>
+					<ul class='list-group'>
+						<br />
+						<a class='list-group-item' href={'https://github.com/sunnyarj114'}>
+							- Arunabh Arjun
+						</a>
 					</ul>
 				</div>
 				<main class='bmd-layout-content' style={{ maxHeight: '95vh', overflowY: 'scroll' }}>
