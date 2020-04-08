@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #
 ### DEMO :
 
-### [http://arunabharjun.com/react/counter/](http://arunabharjun.com/react/news/)
+### [http://arunabharjun.com/react/news/](http://arunabharjun.com/react/news/)
 #
 
 
