@@ -26,7 +26,7 @@ const The_app = () => {
 				>
 					<ul class='list-group'>
 						<br />
-						<a class='list-group-item' href={'https://github.com/sunnyarj114'}>
+						<a class='list-group-item' href={'https://github.com/arunabharjun'}>
 							- Arunabh Arjun
 						</a>
 					</ul>
